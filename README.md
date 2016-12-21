@@ -23,6 +23,11 @@ rootUrl: 182.254.247.206:5656
 }
 ```
 
+```
+201: created
+500: server error
+```
+
 ## 登录
 - url: /api/user/login
 - method: POST
@@ -50,6 +55,11 @@ rootUrl: 182.254.247.206:5656
 }
 ```
 
+```
+200: login success
+403: permission limit
+500: server error
+```
 
 # 论坛相关
 
@@ -135,7 +145,7 @@ rootUrl: 182.254.247.206:5656
 500: server err
 ```
 
-```
+
 
 ## 回复帖子 
 - url: /api/post/:pid/reply/
@@ -144,7 +154,7 @@ rootUrl: 182.254.247.206:5656
 - body:
 
 ```
-{"
+{
 	content:'xx'
 }
 ```
@@ -175,7 +185,7 @@ rootUrl: 182.254.247.206:5656
 	msg:'',
 	data:[
 		{
-	p	id:xx,
+		pid:xx,
 		title:'xx',
 		author:'xx',
 		content:'xx',(简短的内容)
