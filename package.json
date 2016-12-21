@@ -1,0 +1,24 @@
+{
+	"name": "nforum",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "ybao",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "~1.15.1",
+		"cookie-parser": "~1.4.3",
+		"express": "~4.13.4",
+		"bcrypt": "~0.8.7",
+		"mysql": "latest",
+		"jsonwebtoken": "~7.1.9",
+		"async": "~2.0.0",
+		"log4js": "0.6.38",
+		"nodemailer": "2.6.4",
+		"nodemailer-smtp-transport": "2.7.2"
+	}
+}
