@@ -1,6 +1,7 @@
-# 用户相关
-
 rootUrl: 182.254.247.206:5656
+静态文件部署 url: 182.254.247.206:9080
+
+# 用户相关
 
 ## 注册
 - url: /api/user/register
@@ -45,7 +46,8 @@ rootUrl: 182.254.247.206:5656
 		name:"xxx",
 		mail:"xxx",
 		gender:"xx",
-		age:xx		
+		age:xx,
+		avator:"url"	
 	}
 }
 ```
@@ -175,7 +177,7 @@ rootUrl: 182.254.247.206:5656
 	msg:'',
 	data:[
 		{
-	p	id:xx,
+		pid:xx,
 		title:'xx',
 		author:'xx',
 		content:'xx',(简短的内容)
@@ -207,6 +209,7 @@ rootUrl: 182.254.247.206:5656
 		pid:xx,
 		title:'xx',
 		author:'xx',
+		avator:'url',
 		content:'xx',
 		time:'xxx',
 		click:xx,
@@ -216,6 +219,7 @@ rootUrl: 182.254.247.206:5656
 			{
 				pid:xx,(当前帖子的p id)
 				author:'xx',
+				avator:'url',
 				content:'xx',
 				time:'xx',
 				order:xx(1,2,3累加)
