@@ -63,6 +63,39 @@ rootUrl: 182.254.247.206:5656
 500: server error
 ```
 
+## 更改用户信息
+
+- url: /api/user/
+- method: PUT
+- header: Authorization: token
+- body:
+
+```
+{
+	mail: 'xxx',
+	pwd: 'xxx',
+	name: 'xxx',
+	avator: 'xxx',
+	gender: 'xx',
+	age: xx
+}
+```
+
+- return:
+
+```
+{
+	code: 0,
+	msg: ''
+}
+```
+
+```
+200: ok
+403: permission limit
+500: server error
+```
+
 # 论坛相关
 
 ## 新建帖子
@@ -189,7 +222,8 @@ rootUrl: 182.254.247.206:5656
 		{
 		pid:xx,
 		title:'xx',
-		author:'xx',
+		name:'xx',
+		avator:'url',
 		content:'xx',(简短的内容)
 		time:'YYYY-MM-dd',
 		click:xx,
@@ -218,7 +252,7 @@ rootUrl: 182.254.247.206:5656
 		topic:{
 		pid:xx,
 		title:'xx',
-		author:'xx',
+		name:'xx',
 		avator:'url',
 		content:'xx',
 		time:'xxx',
@@ -228,7 +262,7 @@ rootUrl: 182.254.247.206:5656
 		reply:[
 			{
 				pid:xx,(当前帖子的p id)
-				author:'xx',
+				name:'xx',
 				avator:'url',
 				content:'xx',
 				time:'xx',

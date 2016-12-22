@@ -6,8 +6,12 @@ router.post('/register',function (req,res) {
     user.addUser(req,res);
 });
 
-router.post('/login',function (req,res,err) {
-    user.getToken(req,res,null);
+router.post('/login',function (req,res) {
+    user.getToken(req,res);
 });
+
+router.put('/',function(req,res){
+	user.changeUserInfo(req,res);
+})
 
 module.exports = router;

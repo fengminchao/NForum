@@ -25,6 +25,6 @@ app.use(function (err, req, res, next) {
     });
 });
 
-app.listen(5656,function(err){
-	
+app.listen(5656,function(){
+	console.log('app is running at 5656');
 })
