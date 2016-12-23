@@ -99,7 +99,7 @@ rootUrl: 182.254.247.206:5656
 # 论坛相关
 
 ## 新建帖子
-- url: /api/post/
+- url: /api/posts
 - method: POST
 - header: Authorization:token
 - body:
@@ -130,7 +130,7 @@ rootUrl: 182.254.247.206:5656
 ```
 
 ## 更改帖子
-- url: /api/post/:pid/
+- url: /api/post/:pid
 - method: PUT
 - header: Authorization:token 
 - body:
@@ -161,7 +161,7 @@ rootUrl: 182.254.247.206:5656
 ```
 
 ## 删除帖子
-- url: /api/post/:pid/
+- url: /api/post/:pid
 - method: DELETE
 - header: Authorization: token || admin: admin
 
@@ -183,7 +183,7 @@ rootUrl: 182.254.247.206:5656
 
 
 ## 回复帖子 
-- url: /api/post/:pid/reply/
+- url: /api/post/:pid/reply
 - method: POST
 - header: Authorization: token
 - body:
@@ -210,7 +210,7 @@ rootUrl: 182.254.247.206:5656
 ```
 
 ## 获取帖子列表
-- url:/api/post/
+- url:/api/posts
 - method: GET
 - return:
 
@@ -240,7 +240,7 @@ rootUrl: 182.254.247.206:5656
 ```
 
 ## 获取帖子详情
-- url:/api/post/p:id/
+- url:/api/posts/:pid
 - method: GET
 - return:
 

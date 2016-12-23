@@ -1,5 +1,3 @@
-var express = require('express');
-var router = express.Router;
 var mysqlUtil = require('../util/mysqlUtil');
 var async = require('async'); 
 var crypto = require('crypto');
@@ -45,7 +43,7 @@ exports.getToken = function(req,res){
 		}
 		if (rows.length == 0) {
 			res.statusCode = 403,
-			return res.send({
+			res.send({
 				code: 3,
 				msg: '该邮箱不存在'
 			});

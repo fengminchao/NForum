@@ -1,5 +1,5 @@
-var app = require('express');
-var logger = require('morgan');
+var express = require('express');
+var app = express();
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var log4js = require('log4js');
@@ -7,13 +7,12 @@ var log4js = require('log4js');
 var user = require('./routes/user');
 var forum = require('./routes/forum');
 
-app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 app.use('/api/user', user);
-app.use('/api/post',forum);
+app.use('/api/posts',forum);
 
 // production error handler
 // no stacktraces leaked to user
