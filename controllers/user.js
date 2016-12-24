@@ -85,7 +85,7 @@ exports.getToken = function(req,res){
 exports.changeUserInfo = function(req,res){
 	var user = req.body;
 	mysqlUtil.query({
-		sql: 'update user set (mail,pwd,name,avator,gender,age) values (?,?,?,?,?,?) where token = ?',
+		sql: 'update user set mail = ?,pwd = ? ,name = ? ,avator = ? ,gender = ? ,age = ? where token = ?',
 		params:[
 			user.mail,
 			user.pwd,
@@ -119,20 +119,21 @@ exports.changeUserInfo = function(req,res){
 }
 
 function generateToken(length,mail,callback){
-	crypto.crypto.randomBytes(length,function(err,buffer){
+	crypto.randomBytes(length,function(err,buffer){
 		callback(err,buffer.toString('hex'),mail);
 	});
 }
 
 function saveToken(token,mail,callback){
+	console.log(token);
     mysqlUtil.query({
         sql: 'update user set token = ? where mail = ?',
         params: [
         token,
         mail
         ]
-    }, function (err, row) {
-        console.log(row);
+    }, function (err, rows) {
+        console.log(rows);
         if (err) {
             callback(err, null);
         } else {

@@ -116,7 +116,7 @@ rootUrl: 182.254.247.206:5656
 ```
 {
 	code:0,
-	msg:"xx"，
+	msg:"xx",
 	data:{
 		pid:2321
 	}
@@ -130,7 +130,7 @@ rootUrl: 182.254.247.206:5656
 ```
 
 ## 更改帖子
-- url: /api/post/:pid
+- url: /api/posts/:pid
 - method: PUT
 - header: Authorization:token 
 - body:
@@ -161,7 +161,7 @@ rootUrl: 182.254.247.206:5656
 ```
 
 ## 删除帖子
-- url: /api/post/:pid
+- url: /api/posts/:pid
 - method: DELETE
 - header: Authorization: token || admin: admin
 
@@ -183,7 +183,7 @@ rootUrl: 182.254.247.206:5656
 
 
 ## 回复帖子 
-- url: /api/post/:pid/reply
+- url: /api/posts/:pid/reply
 - method: POST
 - header: Authorization: token
 - body:
@@ -225,7 +225,7 @@ rootUrl: 182.254.247.206:5656
 		name:'xx',
 		avator:'url',
 		content:'xx',(简短的内容)
-		time:'YYYY-MM-dd',
+		time: xxx(时间戳),
 		click:xx,
 		reply:xx
 	},
@@ -255,18 +255,17 @@ rootUrl: 182.254.247.206:5656
 		name:'xx',
 		avator:'url',
 		content:'xx',
-		time:'xxx',
+		time:xxx,
 		click:xx,
 		reply:xx
 		},
-		reply:[
+		replys:[
 			{
 				pid:xx,(当前帖子的p id)
 				name:'xx',
 				avator:'url',
 				content:'xx',
-				time:'xx',
-				order:xx(1,2,3累加)
+				time:xxx（时间戳
 			},
 			...
 		]
