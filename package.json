@@ -16,6 +16,7 @@
 		"bcrypt": "~0.8.7",
 		"mysql": "latest",
 		"jsonwebtoken": "~7.1.9",
+		"morgan": "~1.7.0",
 		"async": "~2.0.0",
 		"log4js": "0.6.38",
 		"nodemailer": "2.6.4",
