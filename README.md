@@ -1,5 +1,12 @@
-rootUrl: 182.254.247.206:5656
-静态文件部署 url: 182.254.247.206:9080
+- rootUrl: 182.254.247.206:5656
+- 静态文件部署 url: 182.254.247.206:9080
+
+install
+
+```
+npm install
+npm start
+```
 
 # 用户相关
 
@@ -239,7 +246,7 @@ rootUrl: 182.254.247.206:5656
 500: server error
 ```
 
-## 获取帖子详情
+## 获取帖子详情(楼数直接根据时间戳来进行排序)
 - url:/api/posts/:pid
 - method: GET
 - return:
@@ -265,7 +272,7 @@ rootUrl: 182.254.247.206:5656
 				name:'xx',
 				avator:'url',
 				content:'xx',
-				time:xxx（时间戳
+				time:xxx（时间戳)
 			},
 			...
 		]
