@@ -1,3 +1,4 @@
+//用户逻辑模块
 var mysqlUtil = require('../util/mysqlUtil');
 var async = require('async'); 
 var crypto = require('crypto');
