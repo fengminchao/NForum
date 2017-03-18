@@ -224,6 +224,9 @@ exports.getTopic = function(req,res){
 				})
 			},
 			function(result,callback){
+				if(result == null){
+					return callback('result is null',null);
+				}
 				result.pid = result.id;
 				delete result.id;
 				delete result.mail;

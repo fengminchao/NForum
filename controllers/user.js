@@ -35,6 +35,8 @@ exports.getToken = function(req,res){
 		req.body.mail
 		]
 	},function(err,rows){
+		console.log(rows);
+		console.log(rows[0]);
 		if (err) {
 			res.statusCode = 500;
 			return res.send({
@@ -43,11 +45,12 @@ exports.getToken = function(req,res){
 			})
 		}
 		if (rows.length == 0) {
-			res.statusCode = 403,
+			res.statusCode = 403;
 			res.send({
 				code: 3,
 				msg: '该邮箱不存在'
 			});
+			return;
 		}
 		if (rows[0].pwd == req.body.pwd) {
 
@@ -66,6 +69,7 @@ exports.getToken = function(req,res){
 						});
 					}
 					res.statusCode = 200;
+					res.set('Cache-Control','public');
 					res.send({
 						code: 0,
 						msg: '',
@@ -79,12 +83,19 @@ exports.getToken = function(req,res){
 						}
 					});
 				})
+		}else{
+			res.statusCode = 403;
+			res.send({
+				code: 3,
+				msg: '密码错误'
+			})
 		}
 	})
 }
 
 exports.changeUserInfo = function(req,res){
 	var user = req.body;
+	console.log(req.get('Authorization'));
 	mysqlUtil.query({
 		sql: 'update user set mail = ?,pwd = ? ,name = ? ,avator = ? ,gender = ? ,age = ? where token = ?',
 		params:[
@@ -106,15 +117,16 @@ exports.changeUserInfo = function(req,res){
 		}
 		if (rows.affectedRows > 0) {
 			res.statusCode = 200;
+			res.set('Cache-Control','public');
 			return res.send({
 				code: 0,
 				msg: ''
 			});
 		}
-		res.statusCode = 403;
+		res.statusCode = 401;
 		res.send({
-			code: 3,
-			msg: '没有权限'
+			code: 1,
+			msg: '认证失败'
 		})
 	})
 }

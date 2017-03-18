@@ -1,7 +1,6 @@
 /**
  * Created by ybao on 16/9/16.
  */
-
 var config = {
     //app name
     name:'nforum',
@@ -11,7 +10,7 @@ var config = {
     mysql: {
         connectionLimit: 10,
         host: 'localhost',
-        user: 'root',
+        user: "root",
         database: 'nforum',
         port: 3306
     },

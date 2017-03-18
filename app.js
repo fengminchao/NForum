@@ -15,6 +15,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
+app.use(function(err,req,res,next){
+	res.set('Cache-Control','public');
+	next();
+});
 //路由分配
 app.use('/api/user', user);
 app.use('/api/posts',forum);
@@ -28,6 +32,30 @@ app.use(function (err, req, res, next) {
         error: {}
     });
 });
+
+var os = require('os');
+var ifaces = os.networkInterfaces();
+
+Object.keys(ifaces).forEach(function (ifname) {
+  var alias = 0;
+
+  ifaces[ifname].forEach(function (iface) {
+    if ('IPv4' !== iface.family || iface.internal !== false) {
+      // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
+      return;
+    }
+
+    if (alias >= 1) {
+      // this single interface has multiple ipv4 addresses
+      console.log(ifname + ':' + alias, iface.address);
+    } else {
+      // this interface has only one ipv4 adress
+      console.log(ifname, iface.address);
+    }
+    ++alias;
+  });
+});
+
 
 //监听在5656端口
 app.listen(5656,function(){
